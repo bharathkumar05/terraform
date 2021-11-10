@@ -3,13 +3,11 @@
  # value = "hello\n bharath"
 #}
 
-variable "abc"
-{
+variable "abc" {
   default = "100"
 }
 
-output "abc"
-{
+output "abc" {
   value = var.abc
 }
 
