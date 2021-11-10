@@ -23,10 +23,10 @@ output "samplex" {
 variable "sampley" {
   default = {
     string = "hello bharath",
-    numberr = 1000,
+    number = 1000,
     boolean = true
   }
 }
 output "sampley" {
-  value = "string =${var.sampley["string"]}"
+  value = "string =${var.sampley["string"]}, number=${var.sampley["number"]},boolean=${var.sampley["boolean"]}"
 }
