@@ -22,8 +22,8 @@ output "samplex" {
 }
 variable "sampley" {
   default = [
-  string = "hello bharath"
-  boolean = true
+  string = "hello bharath",
+  boolean = true,
     number = 1000
   ]
 }
