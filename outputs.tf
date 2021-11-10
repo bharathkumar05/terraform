@@ -28,5 +28,5 @@ variable "sampley" {
   }
 }
 output "sampley" {
-  value = "value of string= ${"string"}"
+  value ="string=${var.sampley[string]}"
 }
