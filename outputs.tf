@@ -7,7 +7,7 @@ variable "abc" {
   default = "100"
 }
 
-output "abc" {
+output "abc1" {
   value = var.abc
 }
 
