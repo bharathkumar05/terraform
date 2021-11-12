@@ -7,7 +7,7 @@ resource "aws_instance" "sample" {
   instance_type = "t2.small"
 
   tags = {
-    Name = "HelloWorld"
+    Name = "sample"
   }
 }
 resource "aws_security_group" "allow_sample" {
