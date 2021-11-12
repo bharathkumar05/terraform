@@ -1,24 +1,26 @@
 provider "aws" {
   region = "us-east-1"
 }
-
 resource "aws_security_group" "allow_sample" {
   name        = "allow_sample"
   description = "Allow sample traffic"
 
-  ingress {
+  ingress = [
+   {
     description      = "TLS from VPC"
-    from_port        = 443
-    to_port          = 443
+    from_port        = 22
+    to_port          = 22
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = []
     prefix_list_ids  = []
     security_groups  = []
     self             = false
-  }
+   }
+  ]
 
-  egress {
+  egress =[
+   {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
@@ -27,7 +29,8 @@ resource "aws_security_group" "allow_sample" {
     prefix_list_ids  = []
     security_groups  = []
     self             = false
-  }
+   }
+  ]
 
   tags = {
     Name = "allow_sample"
@@ -36,10 +39,11 @@ resource "aws_security_group" "allow_sample" {
 
 resource "aws_instance" "sample" {
   ami           = "ami-0855cab4944392d0a"
-  instance_type = "t3.micro"
-  vpc_security_group_ids = [aws_security_group.allow_sample.id]
+  instance_type = "t2.small"
 
   tags = {
-    Name = "sample"
+    Name = "HelloWorld"
   }
 }
+
+
