@@ -15,9 +15,9 @@ resource "aws_security_group" "allow_sample" {
       self             = false
     }
   ]
-
   egress =[
     {
+      description      = "egress"
       from_port        = 0
       to_port          = 0
       protocol         = "-1"
