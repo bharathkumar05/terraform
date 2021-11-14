@@ -1,6 +1,6 @@
-resource "aws_security_group" "allow_sample" {
-  name        = "allow_sample"
-  description = "Allow sample traffic"
+resource "aws_security_group" "allow_all" {
+  name        = "allow_all"
+  description = "Allow all traffic"
 
   ingress = [
     {
@@ -30,9 +30,9 @@ resource "aws_security_group" "allow_sample" {
   ]
 
   tags = {
-    Name = "allow_sample"
+    Name = "allow_all"
   }
 }
-output "SGID" {
-  value = "aws_security_group.allow_sample.id"
-}
+  output "SGID" {
+    value = "aws_security_group.allow_all.id"
+  }
